@@ -15,9 +15,9 @@ class GameWindow < Gosu::Window
     @running       = true
     @font          = Gosu::Font.new(self, Gosu::default_font_name, 20)
     @game_over     = Gosu::Font.new(self, Gosu::default_font_name, 20)
-    @score_font   = Gosu::Font.new(self, Gosu::default_font_name, 20)
+    @score_font    = Gosu::Font.new(self, Gosu::default_font_name, 20)
     @timer         = Timer.new(self, @bullets)
-    @score        = 0
+    @score         = 0
     @game_over_now = false
   end
 
@@ -25,6 +25,7 @@ class GameWindow < Gosu::Window
     if @running
       if @player.hit_by? live_bullets
         @running = false
+        @player.explosion_song.play
       else
         run_game
       end

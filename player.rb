@@ -1,15 +1,17 @@
 class Player
-  attr_reader :lives, :x, :y, :laser
+  attr_reader :lives, :x, :y, :laser, :explosion_song
 
   def initialize(window)
-    @window    = window
-    @image     = Gosu::Image.new(@window, "media/player.png", true)
-    @x         = 0
-    @y         = window.height - 80
-    @explosion = Gosu::Image.new(@window, "media/explosion.png", true)
-    @exploded  = false
-    @lives     = 3
-    @laser     = Laser.new(self, @window)
+    @window         = window
+    @image          = Gosu::Image.new(@window, "media/player.png", true)
+    @x              = 0
+    @y              = window.height - 80
+    @explosion      = Gosu::Image.new(@window, "media/explosion.png", true)
+    @exploded       = false
+    @lives          = 3
+    @laser          = Laser.new(self, @window)
+    @song           = Gosu::Sample.new("media/shoot.wav")
+    @explosion_song = Gosu::Sample.new("media/explosion.wav")
   end
 
   def draw
@@ -30,6 +32,7 @@ class Player
     end
     if @window.button_down? Gosu::Button::KbSpace
       @laser.shoot
+      @song.play
     end
     @laser.update
   end
