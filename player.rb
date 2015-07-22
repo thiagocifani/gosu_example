@@ -14,11 +14,11 @@ class Player
   end
 
   def left
-    @x -= 1.0
+    @x -= 3.0
   end
 
   def right
-    @x += 1.0
+    @x += 3.0
   end
 
   def draw

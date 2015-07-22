@@ -9,7 +9,7 @@ class GameWindow < Gosu::Window
 
     @backdrop = Backdrop.new(self, "background.jpg")
     @player   = Player.new
-    @beep     = Gosu::Sample.new("media/teste.mp3")
+    @beep     = Gosu::Sample.new("media/beep.wav")
     @font     = Gosu::Font.new(20)
   end
 
