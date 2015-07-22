@@ -11,7 +11,7 @@ class GameWindow < Gosu::Window
 
     @background    = Gosu::Image.new(self, "media/starry-night.png", true)
     @player        = Player.new(self)
-    @bullets       = 10.times.map { Bullet.new(self) }
+    @bullets       = 6.times.map { Bullet.new(self) }
     @running       = true
     @font          = Gosu::Font.new(self, Gosu::default_font_name, 20)
     @game_over     = Gosu::Font.new(self, Gosu::default_font_name, 20)

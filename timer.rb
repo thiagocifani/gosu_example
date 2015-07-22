@@ -3,7 +3,7 @@ class Timer
     @bullets               = bullets
     @window                = window
     @start_time            = Time.now
-    @every_n_seconds       = 5
+    @every_n_seconds       = 15
     @last_recorded_seconds = 0
   end
 
